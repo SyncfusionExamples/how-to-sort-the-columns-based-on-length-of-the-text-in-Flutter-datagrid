@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
               columnName: 'id',
               label: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.center,
+                  alignment: Alignment.centerRight,
                   child: Text(
                     'ID',
                   ))),
@@ -55,24 +55,26 @@ class _MyHomePageState extends State<MyHomePage> {
               columnName: 'name',
               label: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.center,
-                  child: Text('Name'))),
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    'Name',
+                  ))),
           GridTextColumn(
-              columnName: 'designation',
+              columnName: 'city',
               width: 110,
               label: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.center,
+                  alignment: Alignment.centerLeft,
                   child: Text(
-                    'Designation',
+                    'City',
                     overflow: TextOverflow.ellipsis,
                   ))),
           GridTextColumn(
-              columnName: 'salary',
+              columnName: 'Freight',
               label: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
-                  alignment: Alignment.center,
-                  child: Text('Salary'))),
+                  alignment: Alignment.centerRight,
+                  child: Text('Freight'))),
         ],
       ),
     );
@@ -80,30 +82,35 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<Employee> populateData() {
     return <Employee>[
-      Employee(10001, 'James', 'Project Lead', 20000),
-      Employee(10002, 'Kathryn', 'Manager', 30000),
-      Employee(10003, 'Lara', 'Developer', 15000),
-      Employee(10004, 'Michael', 'Designer', 15000),
-      Employee(10005, 'Martin', 'Developer', 15000),
-      Employee(10006, 'Newberry', 'Developer', 15000),
-      Employee(10007, 'Balnc', 'Developer', 15000),
-      Employee(10008, 'Perry', 'Developer', 15000),
-      Employee(10009, 'Gable', 'Developer', 15000),
-      Employee(10010, 'Grimes', 'Developer', 15000),
+      Employee(10001, 'James', 'Bruxelles', 20000),
+      Employee(10002, 'Kathryn', 'Rosario', 30000),
+      Employee(10003, 'Lara', 'Recife', 15000),
+      Employee(10004, 'Michael', 'Graz', 15000),
+      Employee(10005, 'Martin', 'Montreal', 15000),
+      Employee(10006, 'Newberry', 'Tsawassen', 15000),
+      Employee(10007, 'Balnc', 'Campinas', 15000),
+      Employee(10008, 'Perry', 'Resende', 15000),
+      Employee(10009, 'Gable', 'Resende', 15000),
+      Employee(10010, 'Grimes', 'Recife', 15000),
+      Employee(10011, 'Newberry', 'Tsawassen', 15000),
+      Employee(10012, 'Balnc', 'Campinas', 15000),
+      Employee(10013, 'Perry', 'Resende', 15000),
+      Employee(10014, 'Gable', 'Resende', 15000),
+      Employee(10015, 'Grimes', 'Recife', 15000),
     ];
   }
 }
 
 class Employee {
-  Employee(this.id, this.name, this.designation, this.salary);
+  Employee(this.id, this.name, this.city, this.freight);
 
   final int id;
 
   final String name;
 
-  final String designation;
+  final String city;
 
-  final int salary;
+  final int freight;
 }
 
 class EmployeeDataSource extends DataGridSource {
@@ -112,9 +119,8 @@ class EmployeeDataSource extends DataGridSource {
         .map<DataGridRow>((e) => DataGridRow(cells: [
               DataGridCell<int>(columnName: 'id', value: e.id),
               DataGridCell<String>(columnName: 'name', value: e.name),
-              DataGridCell<String>(
-                  columnName: 'designation', value: e.designation),
-              DataGridCell<int>(columnName: 'salary', value: e.salary),
+              DataGridCell<String>(columnName: 'city', value: e.city),
+              DataGridCell<int>(columnName: 'freight', value: e.freight),
             ]))
         .toList();
   }
@@ -162,7 +168,9 @@ class EmployeeDataSource extends DataGridSource {
     return DataGridRowAdapter(
         cells: row.getCells().map<Widget>((e) {
       return Container(
-        alignment: Alignment.center,
+        alignment: ['id', 'freight'].contains(e.columnName)
+            ? Alignment.centerRight
+            : Alignment.centerLeft,
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Text(e.value.toString()),
       );
