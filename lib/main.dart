@@ -43,7 +43,7 @@ class _MyHomePageState extends State<MyHomePage> {
         source: _employeeDataSource,
         allowSorting: true,
         columns: <GridColumn>[
-          GridTextColumn(
+          GridColumn(
               columnName: 'id',
               label: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -51,7 +51,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     'ID',
                   ))),
-          GridTextColumn(
+          GridColumn(
               columnName: 'name',
               label: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -59,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Text(
                     'Name',
                   ))),
-          GridTextColumn(
+          GridColumn(
               columnName: 'city',
               width: 110,
               label: Container(
@@ -69,7 +69,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     'City',
                     overflow: TextOverflow.ellipsis,
                   ))),
-          GridTextColumn(
+          GridColumn(
               columnName: 'Freight',
               label: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
