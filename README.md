@@ -1,10 +1,39 @@
-## Custom sorting
+# Flutter DataGrid sorting based on text length
 
-The datagrid allows to sort columns based on custom logic. For each column, you can provide different sorting criteria by overriding the following methods from [DataGridSource](https://pub.dev/documentation/syncfusion_flutter_datagrid/latest/datagrid/DataGridSource-class.html),
 
-* **[handleSort](https://pub.dev/documentation/syncfusion_flutter_datagrid/latest/datagrid/DataGridSource/handleSort.html)** : This method will be called when you tap the column header and sorting is being applied. You can override this method to provide the entire logic for sorting for columns.
-* **[compare](https://pub.dev/documentation/syncfusion_flutter_datagrid/latest/datagrid/DataGridSource/compare.html)** : You can override this method to compare two objects and return the sorting order based on the criteria.
+This repository contains a sample that demonstrates how to sort the column based on the text length in Syncfusion® DataGrid package.
 
-### Sort columns based on string length
 
-This application shows how to perform custom sorting for the columns based on the string length by overriding the `handleSort` and `compare` method.
+## Syncfusion® controls:
+
+
+This project used the following Syncfusion® widget(s):
+* [DataGrid](https://www.syncfusion.com/flutter-widgets/flutter-datagrid)
+
+
+## Supported platforms
+
+
+Refer to the following link to know about the supported platform - [Platforms](https://help.syncfusion.com/flutter/system-requirements#supported-platforms)
+
+
+## Requirements to run the sample
+
+
+Refer to the following link to know about system requirements - [System Requirements](https://help.syncfusion.com/flutter/system-requirements)
+
+
+## How to run the sample
+
+
+1. Clone the sample and open it in preferred IDE.
+2. Run the application.
+
+
+*Note: If you download the sample using the "Download ZIP" option, right-click it, select Properties, and then select Unblock.*
+
+
+## License
+
+
+Syncfusion® has no liability for any damage or consequence that may arise by using or viewing the samples. The samples are for demonstrative purposes, and if you choose to use or access the samples, you agree to not hold Syncfusion® liable, in any form, for any damage that is related to use, for accessing, or viewing the samples. By accessing, viewing, or seeing the samples, you acknowledge and agree Syncfusion®’s samples will not allow you seek injunctive relief in any form for any claim related to the sample. If you do not agree to this, do not view, access, utilize, or otherwise do anything with Syncfusion®’s samples.
